@@ -1,10 +1,10 @@
+function toggleDisplayNone(id) {
+    const el = document.getElementById(id)
+    el.style.display = el.style.display == 'none' ? '' : 'none'
+}
 
-    function toggleDisplayNone(id) {
-        const el = document.getElementById(id)
-        el.style.display = el.style.display == 'none' ? '' : 'none'
-    }
-
-	jQuery('.alt-options').on('click', (ev) => {
+jQuery(() => {
+    jQuery('.alt-options').on('click', (ev) => {
         const altOption = ev.target
         const blockId = altOption.dataset.blockid
         const altId = altOption.dataset.altid
@@ -16,3 +16,4 @@
         jQuery(`#blockbody-${blockId} #${altId}pane`).slideDown('slow')
     })
     jQuery('.alt-options > *:first-child').click()
+})
